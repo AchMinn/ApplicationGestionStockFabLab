@@ -1,0 +1,2 @@
+# ApplicationGestionStockFabLab
+describe
