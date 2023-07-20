@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Main Page</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/js" href="index.js">
+</head>
+<body>
+<header role="banner">
+  <div class="header__avatar"><img src="universialogo.png"></div>
+  <div id="login">
+  <div id="form">
+    <h2>Welcome</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <input type="submit" value="Sign In" class="submit">
+    <input type="button" value="Close" class="close" onclick="closeForm()">
+  </div>
+</div>
+</header>
+
+<nav role="navigation">
+  <ul class="menu__list">
+    <li class="menu__item">
+      <button class="menu__link">Operateur</button>
+    </li>
+    <li class="menu__item">
+      <button class="menu__link">Machines</button>
+    </li>
+    <li class="menu__item">
+      <button class="menu__link">Consommateur</button>
+    </li>
+    <li class="menu__item">
+      <button class="menu__link">Fournisseur</button>
+    </li>
+    <li class="menu__item">
+      <button class="menu__link">Filaments</button>
+    </li>
+    <li class="menu__item">
+      <button class="menu__link" onclick="openForm()">Se Connecter</button>
+    </li>
+  </ul>
+</nav>
+<script>
+function openForm() {
+  document.getElementById("login").style.display = "block";
+  document.getElementById("form").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("login").style.display = "none";
+  document.getElementById("form").style.display = "none";
+}
+</script>
+</body>
+</html>
