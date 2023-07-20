@@ -15,7 +15,7 @@
     <h2>Welcome</h2>
     <input type="text" placeholder="Username">
     <input type="password" placeholder="Password">
-    <input type="submit" value="Sign In" class="submit">
+    <input type="submit" value="Log In" class="submit">
     <input type="button" value="Close" class="close" onclick="closeForm()">
   </div>
 </div>
