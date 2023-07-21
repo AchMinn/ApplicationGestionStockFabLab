@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
    if($count == 1) {
          // session_register("myusername");
-         // $_SESSION['myusername'] = $username;
+         $_SESSION['myusername'] = $username;
          header("location: Operateur.php");
          die();
       }
