@@ -87,6 +87,7 @@ CREATE TABLE `Fournisseur` (
 
 CREATE TABLE `Machines` (
   `ID_Machine` int(11) NOT NULL,
+  `image_Machine` longblob DEFAULT NULL,
   `status` varchar(10) DEFAULT 'Active' CHECK (`status` in ('Active','En panne')),
   `Nom_de_la_machine` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
