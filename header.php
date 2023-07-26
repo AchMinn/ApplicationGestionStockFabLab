@@ -12,7 +12,7 @@
 <body>
 	      <div id="headerWrapper">
 <header role="banner">
-  <div class="header__avatar"><a href="index.php" style="text-decoration: none;"><img src="universialogo.png"></a></div>
+  <div class="header__avatar"><a href="index.php" style="text-decoration: none;"><img src="universialogomain.png"></a></div>
   <div id="login">
   <div id="form">
     <h2>Connecter vous</h2>
