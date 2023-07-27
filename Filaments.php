@@ -1,3 +1,8 @@
+<?php 
+include('mainpages.php')
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +13,7 @@
 	<link rel="stylesheet" href="index.css">
 </head>
 <body>
-	 <?php include("header.php") ?>
+  <?php include('loggedinheader.php') ?>
 <script>
 function openForm() {
   document.getElementById("login").style.display = "block";
