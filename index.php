@@ -1,11 +1,13 @@
 <?php 
-
 session_start();
 if(isset($_SESSION['username']))
  {
     header("Location:loggedinIndex.php"); 
  }
 include("config.php");
+
+//Login FORM
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   $username = mysqli_real_escape_string($db,$_POST['username']);
   $password = mysqli_real_escape_string($db,$_POST['password']);
@@ -20,11 +22,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          $_SESSION['username'] = $username;
          header("location:loggedinIndex.php");       
        }
-    else{
+    elseif ($count != 1) {
       echo "<script type='text/javascript'>alert('Invalid Username or Password');</script>";
-    }
    }
- ?>
+}
+
+//Registering FORM
+
+// if($_SERVER["REQUEST_METHOD"] == "POST"){
+//   // if (move_uploaded_file($_FILES['userimagereg']['tmp_name'])) {
+//   $UserImage =   mysqli_real_escape_string($db,file_get_contents($_FILES['userimagereg']['tmp_name']));
+//   $usernamereg = mysqli_real_escape_string($db,$_POST['usernamereg']);
+//   $passwordreg = mysqli_real_escape_string($db,$_POST['passwordreg']);
+
+//   $sqlreg = "INSERT INTO Operateur (image,username,mot_de_passe) VALUES('$UserImage','$usernamereg','$passwordreg')";
+//   $resultreg = mysqli_query($db,$sqlreg);
+//   }
+//  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +63,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           </div>
           <div id="scrollContainer" class="flex flex-no-wrap overflow-x-scroll scrolling-touch items-start mb-8">
             <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
-              <a href="#" class="space-y-4">
                 <div class="aspect-w-16 aspect-h-9">
                   <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="Raise3D.jpg" alt="Not Found"
                   />
@@ -66,10 +79,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </p>
                   </div>
                 </div>
-              </a>
             </div>
             <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
-              <a href="#" class="space-y-4">
                 <div class="aspect-w-16 aspect-h-9">
                   <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="TechnoDrill3.jpg" alt=""
                   />
@@ -86,10 +97,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </p>
                   </div>
                 </div>
-              </a>
             </div>
             <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
-              <a href="#" class="space-y-4">
                 <div class="aspect-w-16 aspect-h-9">
                   <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="CIF.jpg" alt=""
                   />
@@ -106,10 +115,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </p>
                   </div>
                 </div>
-              </a>
             </div>
             <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
-              <a href="#" class="space-y-4">
                 <div class="aspect-w-16 aspect-h-9">
                   <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="Imprim3dInterne.jpg" alt=""
                   />
@@ -126,7 +133,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </p>
                   </div>
                 </div>
-              </a>
             </div>
           </div>
         </div>
@@ -137,11 +143,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 function openForm() {
   document.getElementById("login").style.display = "block";
   document.getElementById("form").style.display = "block";
+  document.getElementById("register").style.display = "none";
+  document.getElementById("form1").style.display = "none";
 }
-
 function closeForm() {
   document.getElementById("login").style.display = "none";
   document.getElementById("form").style.display = "none";
+}
+function openForm1() {
+  document.getElementById("register").style.display = "block";
+  document.getElementById("form1").style.display = "block";
+  document.getElementById("login").style.display = "none";
+  document.getElementById("form").style.display = "none";
+}
+function closeForm1() {
+  document.getElementById("register").style.display = "none";
+  document.getElementById("form1").style.display = "none";
 }
 </script>
 </body>
