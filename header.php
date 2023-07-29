@@ -19,8 +19,22 @@
     <form action="index.php" method="POST">
     <input type="text" placeholder="Username" name="username">
     <input type="password" placeholder="Password" name="password">
-    <input type="submit" value="Log in" class="submit" name="sumbit">
+    <input type="submit" value="Log in" class="submit" name="sumbitlog">
     <input type="button" value="Close" class="close" onclick="closeForm()">
+    <input type="hidden" name="number1" value="number1">
+    </form>
+  </div>
+</div>
+  <div id="register">
+  <div id="form1">
+    <h2>Enregistrez vous</h2>
+    <form action="index.php" method="POST">
+    <input type="text" placeholder="Username" name="usernamereg">
+    <input type="password" placeholder="Password" name="passwordreg">
+    <input type="file" id="operatorphoto" accept="image/png, image/jpeg, image/jpg" name="userimagereg">
+    <input type="submit" value="Register" class="submit" name="sumbit1">
+    <input type="button" value="Close" class="close" onclick="closeForm1()">
+    <input type="hidden" name="number2" value="number2">
     </form>
   </div>
 </div>
@@ -44,6 +58,9 @@
     </li>
     <li class="menu__item">
      <button class="menu__link" onclick="openForm()">Se Connecter</button>
+    </li>
+    <li class="menu__item">
+     <button class="menu__link" onclick="openForm1()">S'enregistrer</button>
     </li>
   </ul>
 </nav>
