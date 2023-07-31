@@ -12,7 +12,7 @@
 <body>
   <div id="headerWrapper">
 <header role="banner">
-  <div class="header__avatar"><a href="index.php" style="text-decoration: none;"><img src="universialogomain.png"></a></div>
+  <div class="header__avatar"><a href="index.php" style="text-decoration: none;"><img src="../Images/universialogomain.png"></a></div>
 </header>
 <nav role="navigation">
   <ul class="menu__list">
