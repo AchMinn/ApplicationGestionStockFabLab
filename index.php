@@ -1,44 +1,11 @@
 <?php 
 session_start();
+include("config.php");
 if(isset($_SESSION['username']))
  {
     header("Location:loggedinIndex.php"); 
  }
-include("config.php");
-
-//Login FORM
-
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-  $username = mysqli_real_escape_string($db,$_POST['username']);
-  $password = mysqli_real_escape_string($db,$_POST['password']);
-
-  $sql = "SELECT ID from Operateur where username = '$username' and mot_de_passe = '$password'";
-  $result = mysqli_query($db,$sql);
-  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-  $active = $row['active'];
-  $count = mysqli_num_rows($result);
-
-   if($count == 1) {
-         $_SESSION['username'] = $username;
-         header("location:loggedinIndex.php");       
-       }
-    elseif ($count != 1) {
-      echo "<script type='text/javascript'>alert('Invalid Username or Password');</script>";
-   }
-}
-
-//Registering FORM
-
-// if($_SERVER["REQUEST_METHOD"] == "POST"){
-//   // if (move_uploaded_file($_FILES['userimagereg']['tmp_name'])) {
-//   $UserImage =   mysqli_real_escape_string($db,file_get_contents($_FILES['userimagereg']['tmp_name']));
-//   $usernamereg = mysqli_real_escape_string($db,$_POST['usernamereg']);
-//   $passwordreg = mysqli_real_escape_string($db,$_POST['passwordreg']);
-
-//   $sqlreg = "INSERT INTO Operateur (image,username,mot_de_passe) VALUES('$UserImage','$usernamereg','$passwordreg')";
-//   $resultreg = mysqli_query($db,$sqlreg);
-//   }
-//  ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <div id="scrollContainer" class="flex flex-no-wrap overflow-x-scroll scrolling-touch items-start mb-8">
             <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
                 <div class="aspect-w-16 aspect-h-9">
-                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="Raise3D.jpg" alt="Not Found"
+                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="../Images/Raise3D.jpg" alt="Not Found"
                   />
                 </div>
                 <div class="px-4 py-2">
@@ -82,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
                 <div class="aspect-w-16 aspect-h-9">
-                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="TechnoDrill3.jpg" alt=""
+                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="../Images/TechnoDrill3.jpg" alt=""
                   />
                 </div>
                 <div class="px-4 py-2">
@@ -100,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
                 <div class="aspect-w-16 aspect-h-9">
-                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="CIF.jpg" alt=""
+                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="../Images/CIF.jpg" alt=""
                   />
                 </div>
                 <div class="px-4 py-2">
@@ -118,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
                 <div class="aspect-w-16 aspect-h-9">
-                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="Imprim3dInterne.jpg" alt=""
+                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="../Images/Imprim3dInterne.jpg" alt=""
                   />
                 </div>
                 <div class="px-4 py-2">
